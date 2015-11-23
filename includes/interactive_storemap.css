@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+/* CSS Document                        */
+/* Coded by Aaron Wilson               */
+/* WIA Course - Full Sail University   */
+
+.grey {
+	position: absolute;
+	top: 800px;
+	color: #aaa;
+}
+
+/*  store Info   */
+.store_detail_content { display: none; }
+.store_detail_content .store_detail { width: 920px; }
+
+
+/*  Interactive storemap content */
+.storemap_content {
+	background-image: url(../images/template/storemap.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	height: 400px;
+	width: 1000px;
+	position: relative;
+	top: -30px;
+	left: 478px;
+	color: #000;
+	font-family: Arial;
+	font-size: 12px;
+	margin: 0px 0px 0px 0px;
+}
+
+.storemap_content .clear_both { clear: both; line-height: 1px; }
+
+.storemap_content .store_info h2 {
+	margin: 0px 0px 0px 0px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.storemap_content .store_info h3 {
+	margin: 0px 0px 12px 0px;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	color: #2c3748;
+}
+.storemap_content p { margin: 0px 0px 0px 0px; }
+
+.storemap_content a, a:visited { color: #AA0000; margin: 0px 0px 0px 0px; }
+.storemap_content a.star {
+	background-image: url(../images/template/stars.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	height: 48px;
+	width: 48px;
+	display: block;
+	position: absolute;
+	cursor: pointer;
+}
+.storemap_content a.star.selected {
+	background-position: 0px -96px;
+}
+.storemap_content a.star:hover {
+	background-position: 0px -48px;
+}
+.storemap_content .goods_form {
+	position: absolute;
+	top: 205px;
+	left: 628px;
+}
+.storemap_content .detail_content {
+	position: absolute;
+	top: 400px;
+	left: 0px;
+	width: 920px;
+	height: 400px;
+}
+.storemap_content .store_detail {
+	position: absolute;
+	padding-top: 1px;
+	top: 4px;
+	left: 0px;
+	width: 496px;
+	height: 248px;
+	border: 2px solid black;
+}
+
+.storemap_content .store_detail .store_photo {
+	position: absolute;
+	top: 0px;
+	left: 500px;
+	width: 500px;
+}
+.storemap_content .store_detail .store_info {
+	width: 440px;
+	padding: 10px 10px 10px 10px;
+}
+.storemap_content .store_detail .store_info h2 {
+	color: deepskyblue;
+}

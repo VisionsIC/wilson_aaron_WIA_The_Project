@@ -1,0 +1,83 @@
+/*
+	Aaron Wilson | Student | Full Sail University
+	WIA Course | November 2015 | Main Style CSS
+*/
+
+* { margin: 0; padding: 0; }
+body { position: relative; font: 14px Georgia, serif; background: #fff; color: #fff; }
+
+header { padding: 60px 0 0 0; display: block; }
+header h1 { width: 960px; margin: 0 auto; }
+a { color: #fff; }
+a:hover { color: white; }
+
+/* START ***** navigation menu CSS styles */
+
+.nav-wrap { 
+	margin: 60px auto; 
+	background-color: white; 
+	border-top: 2px solid black; 
+}
+
+/* Clearfix */
+.group:after { visibility: hidden; display: block; content: ""; clear: both; height: 0; }
+*:first-child+html .group { zoom: 1; } /* IE7 */
+
+/* Header CSS */
+#logo_wrap {
+	position: absolute;
+	top: 30px;
+	left: 478px;
+	background-image: url(../images/template/mm_logo-01.png);
+	height: 102px;
+	width: 235px;
+	
+	}
+
+/* JQuery Navigation Menu */
+#nav_menu { 
+	margin: 0 auto; 
+	list-style: none; 
+	position: absolute; 
+	left: 478px;
+	width: 960px; 
+}
+#nav_menu li { 
+	display: inline-block;	
+}
+#nav_menu a { 
+	color: black; 
+	font-size: 14px; 
+	float: left;
+	padding: 6px 10px 4px 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+#nav_menu a:hover { 
+	color: deepskyblue; 
+}
+#underline_fx { 
+	position: absolute;
+	bottom: -2px; 
+	left: 0; 
+	width: 100px; 
+	height: 2px; 
+	background: peru;
+}
+.selected a { 
+	color: peru !important; 
+}
+.ie6 #nav_menu li, .ie7 #nav_menu li { 
+	display: inline; 
+}
+.ie6 #underline_fx {
+	bottom: -3px;
+}
+
+/* END ***** navigation menu CSS styles */
+
+#canvas_wrap {
+	position: absolute;
+	top: 190px;
+	left: 478px
+	}

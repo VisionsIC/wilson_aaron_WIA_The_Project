@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]--> <html class="no-js" lang="en"> <!--[endif]-->
+<!--[if IE 7 ]-->     <!--[endif]-->
+<!--[if IE 8 ]-->     <!--[endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <!--<![endif]-->
+
+<head>
+	<meta charset="UTF-8">
+	
+	<title>MainStreet Mall</title>
+	
+    <link rel="stylesheet" href="css/style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script src="js/jquery.color-RGBa-patch.js"></script>
+    <script src="js/menu.js"></script>
+	<!--[if lt IE 9]-->
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<!--[endif]-->
+    <script type="text/javascript" src="js/canvasjs.min.js"></script>
+    <!--  Begin Inline CanvasJS JavaScript Plugin Code -->
+    <script>
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer",
+                    {
+                        title:{
+                            text: "MainStreet Mall: Common Goods Chart",
+                            fontFamily: "optima",
+                            fontColor: "orange",
+                            padding: 10,
+                            borderThickness: 4,
+                            borderColor: "#add",
+                            cornerRadius: 8,
+                            verticalAlign: 'top',
+                            horizontalAlign: 'center'
+                        },
+                        animationEnabled: true,
+                        data: [
+                            {
+                                type: "doughnut",
+                                startAngle:20,
+                                toolTipContent: "{label}: {y} - <strong>#percent%</strong>",
+                                indexLabel: "{label} #percent%",
+                                dataPoints: [
+                                    {  y: 53.37, indexLabel: "Clothing" },
+                                    {  y: 35.0, indexLabel: "Electronics" },
+                                    {  y: 7, indexLabel: "Food" },
+                                    {  y: 2, indexLabel: "Services" },
+                                    {  y: 5, indexLabel: "Books" }
+                                ]
+                            }
+                        ]
+                    });
+
+            chart.render();
+        }
+    </script>
+    </head>
+    
+<body>
+
+    <header>
+        <h1>MainStreet Mall</h1>
+        <div id="logo_wrap">
+        
+        </div>
+    </header>
+
+	<div class="nav-wrap">
+
+		<ul class="group" id="nav_menu">
+            <li class="nav_item "><a  href="index.html">Home</a></li>
+            <li class="nav_item"><a href="map.html">Map</a></li>
+            <li class="nav_item selected"><a href="statistics.html">Statistics</a></li>
+            <li class="nav_item"><a href="#">Reviews</a></li>
+            <li class="nav_item"><a href="#">Contact</a></li>
+        </ul>
+        
+    </div>
+
+<div id="chartContainer" style="height: 450px; width: 100%;">
+</div>
+</body>
+</html>

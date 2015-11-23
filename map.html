@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="no-js">
+<!--[if lt IE 7 ]--> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]-->    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]-->    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]--><!--><!--<![endif]-->
+
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Interactive Mall Map</title>
+        
+        <link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="includes/style.css" />
+		<link rel="stylesheet" type="text/css" href="includes/interactive_storemap.css" />
+        <!--[if lt IE 9]--><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><!--[endif]-->
+        <script src="js/modernizr.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		<script type="text/javascript" src="includes/jquery-1.5.min.js"></script>
+		<script src="includes/menu.js"></script>
+		<script type="text/javascript" src="includes/interactive_storemap.js"></script>
+		<script src="includes/jquery.color-RGBa-patch.js"></script>
+	</head>
+
+	<body>
+
+	<header>
+		<h1>MainStreet Mall</h1>
+		<div id="logo_wrap">
+\		</div>
+	</header>
+
+	<div class="nav-wrap">
+		<ul class="group" id="nav_menu">
+			<li class="nav_item"><a  href="index.html">Home</a></li>
+			<li class="nav_item selected"><a href="map.html">Map</a></li>
+			<li class="nav_item"><a href="statistics.html">Statistics</a></li>
+			<li class="nav_item"><a href="#">Reviews</a></li>
+			<li class="nav_item"><a href="#">Contact</a></li>
+		</ul>
+	</div>
+	<div class="storemap_content">
+		<!-- stars -->
+		<a class="star" style="top:175px;  left:860px;" goods="BS" store="bookbinders_bs"></a>
+		<a class="star" style="top:41px;  left:358px;"  goods="CS" store="buttonup_cs"></a>
+		<a class="star" style="top:310px; left:222px;" goods="CS" store="coltscoatco_cs"></a>
+		<a class="star" style="top:175px;  left:95px;" goods="ES" store="computerwarehouse_es"></a>
+		<a class="star" style="top:41px; left:526px;" goods="FS" store="diningwithdina_fs"></a>
+		<a class="star" style="top:310px; left:358px;" goods="CS" store="divasshoes_cs"></a>
+		<a class="star" style="top:41px; left:292px;" goods="ES" store="harmonyalley_es"></a>
+		<a class="star" style="top:41px;  left:596px;" goods="CS" store="hoodiehut_cs"></a>
+		<a class="star" style="top:310px; left:526px;" goods="FS" store="juliesfruitjuices_fs"></a>
+		<a class="star" style="top:310px; left:596px;" goods="CS" store="lingeriebylaura_cs"></a>
+		<a class="star" style="top:310px;  left:662px;" goods="CS" store="lousleathershoes_cs"></a>
+		<a class="star" style="top:41px;  left:662px;" goods="ES" store="ltselecrtronics_es"></a>
+		<a class="star" style="top:41px; left:222px;" goods="SS" store="nails4occasions_ss"></a>
+		<a class="star" style="top:310px;  left:292px;" goods="CS" store="nativesun_cs"></a>
+		<a class="star" style="top:310px; left:732px;" goods="CS" store="ottosouterwear_cs"></a>
+		<a class="star" style="top:310px; left:428px;" goods="FS" store="salliessalads_fs"></a>
+		<a class="star" style="top:41px;  left:428px;" goods="FS" store="takeurlicks_fs"></a>
+		<a class="star" style="top:41px; left:732px;" goods="ES" store="ttstoyshop_es"></a>
+
+		<!-- Form -->
+		<form id="storemap_form" name="storemap_form" class="goods_form" method="post" action="">
+			<select name="goods" id="goods">
+				<option value="BS">Books</option>
+				<option value="FS">Food</option>
+				<option value="SS">Services</option>
+				<option value="ES">Electronics</option>
+				<option value="CS">Clothing</option>
+				<option value="ALL" selected="selected">Show all goods</option>
+			</select>
+		</form>
+
+		<!-- store details -->
+		<div class="detail_content">
+			<!-- store -->
+			<div class="store_detail" id="default_img">
+				<img class="store_photo" src="images/stores/default_img.jpg" alt="MainStreet Mall" width="500" height="250" />
+				<div class="store_info">
+					<h2>MainStreet Mall</h2>
+					<h3>Choose A Store</h3>
+				<p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula.</p>
+				<p>Curabitur fringilla. Nunc est ipsum, pretium quis, dapibus sed, varius non, lectus. Proin a quam.</p>
+			</div>
+		</div>
+			
+		</div>
+		<p class="grey">Vivamus auctor leo vel dui. Aliquam erat volutpat. Phasellus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras tempor. Morbi egestas, urna non consequat tempus, nunc arcu mollis enim, eu aliquam erat nulla non nibh. Duis consectetuer malesuada velit. Nam ante nulla, interdum vel, tristique ac, condimentum non, tellus. Proin ornare feugiat nisl. Suspendisse dolor nisl, ultrices at, eleifend vel, consequat at, dolor.</p>
+		<p class="grey">Suspendisse vestibulum dignissim quam. Integer vel augue. Phasellus nulla purus, interdum ac, venenatis non, varius rutrum, leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis a eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Fusce magna mi, porttitor quis, convallis eget, sodales ac, urna. Phasellus luctus venenatis magna. Vivamus eget lacus. Nunc tincidunt convallis tortor. Duis eros mi, dictum vel, fringilla sit amet, fermentum id, sem. Phasellus nunc enim, faucibus ut, laoreet in, consequat id, metus. Vivamus dignissim. Cras lobortis tempor velit. Phasellus nec diam ac nisl lacinia tristique. Nullam nec metus id mi dictum dignissim. Nullam quis wisi non sem lobortis condimentum. Phasellus pulvinar, nulla non aliquam eleifend, tortor wisi scelerisque felis, in sollicitudin arcu ante lacinia leo.</p>
+		<p class="grey">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras tempor. Vivamus auctor leo vel dui. Aliquam erat volutpat. Phasellus nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis a eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.</p>
+		
+		
+		
+		<div class="store_detail_content">
+			<!-- store -->
+			<div class="store_detail" id="bookbinders_bs">
+				<img class="store_photo" src="images/stores/bookbinders_bs.jpg" alt="Bookbinders Bookstore" width="500" height="250" />
+				<div class="store_info">
+					<h2>Bookbinders Bookstore</h2>
+					<h3>Books</h3>
+					<p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos commodo in interdum vitae leo.</p>
+				</div>
+			</div>
+			
+			<!-- store -->
+			<div class="store_detail" id="buttonup_cs">
+				<img class="store_photo" src="images/stores/buttonup_cs.jpg" alt="Button Up" width="500" height="250" />
+				<div class="store_info">
+					<h2>Button Up</h2>
+					<h3>Clothing</h3>
+					<p>Curabitur fringilla. Nunc est ipsum, pretium quis, dapibus sed, varius non, lectus. Proin a quam. Praesent lacinia, eros quis aliquam porttitor, urna lacus volutpat urna, ut fermentum neque mi egestas dolor.</p>
+				</div>
+			</div>
+			
+			<!-- store -->
+			<div class="store_detail" id="coltscoatco_cs">
+				<img class="store_photo" src="images/stores/coltscoatco_cs.jpg" alt="Colt's Coat Co." width="500" height="250" />
+				<div class="store_info">
+					<h2>Colt's Coat Co.</h2>
+					<h3>Clothing</h3>
+					<p>Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum.</p>
+				</div>
+			</div>
+			
+			<!-- store -->
+			<div class="store_detail" id="computerwarehouse_es">
+				<img class="store_photo" src="images/stores/computerwarehouse_es.jpg" alt="Computer Warehouse" width="500" height="250" />
+				<div class="store_info">
+					<h2>Computer Warehouse</h2>
+					<h3>Electronics</h3>
+					<p>Donec porttitor ligula eu dolor. Maecenas vitae nulla nam consectetuer. Lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum.</p>
+				</div>
+			</div>
+			
+			<!-- store -->
+			<div class="store_detail" id="diningwithdina_fs">
+				<img class="store_photo" src="images/stores/diningwithdina_fs.jpg" alt="Dining With Dina" width="500" height="250" />
+				<div class="store_info">
+					<h2>Dining With Dina</h2>
+					<h3>Food</h3>
+					<p>Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper.</p>
+				</div>
+				<div class="clear_both"></div>
+			</div>
+			
+			<!-- store -->
+			<div class="store_detail" id="divasshoes_cs">
+				<img class="store_photo" src="images/stores/divasshoes_cs.jpg" alt="Diva's Shoes" width="500" height="250" />
+				<div class="store_info">
+					<h2>Diva's Shoes</h2>
+					<h3>Clothing</h3>
+					<p>Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper.</p>
+				</div>
+				<div class="clear_both"></div>
+			</div>
+			
+			
+			<!-- store -->
+			<div class="store_detail" id="harmonyalley_es">
+				<img class="store_photo" src="images/stores/harmonyalley_es.jpg" alt="Harmony Alley" width="500" height="250" />
+				<div class="store_info">
+					<h2>Harmony Alley</h2>
+					<h3>Electronics</h3>
+					<p>Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper.</p>
+				</div>
+				<div class="clear_both"></div>
+			</div>
+			
+			
+			<!-- store -->
+			<div class="store_detail" id="hoodiehut_cs">
+				<img class="store_photo" src="images/stores/hoodiehut_cs.jpg" alt="Hoodie Hut" width="500" height="250" />
+				<div class="store_info">
+					<h2>Hoodie Hut</h2>
+					<h3>Clothing</h3>
+					<p>Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper.</p>
+				</div>
+				<div class="clear_both"></div>
+			</div>
+			
+			
+			<!-- store -->
+			<div class="store_detail" id="juliesfruitjuices_fs">
+				<img class="store_photo" src="images/stores/juliesfruitjuices_fs.jpg" alt="Julie's Fruit Juices" width="500" height="250" />
+				<div class="store_info">
+					<h2>Julie's Fruit Juices</h2>
+					<h3>Food</h3>
+					<p>Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper.</p>
+				</div>
+				<div class="clear_both"></div>
+			</div>
+			
+			
+			<!-- store -->
+			<div class="store_detail" id="lingeriebylaura_cs">
+				<img class="store_photo" src="images/stores/lingeriebylaura_cs.jpg" alt="Lingerie By Laura" width="500" height="250" />
+				<div class="store_info">
+					<h2>Lingerie By Laura</h2>
+					<h3>Clothing</h3>
+					<p>Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper.</p>
+				</div>
+				<div class="clear_both"></div>
+			</div>
+			
+			
+			<!-- store -->
+			<div class="store_detail" id="lousleathershoes_cs">
+				<img class="store_photo" src="images/stores/lousleathershoes_cs.jpg" alt="Lou's Leather Shoes" width="500" height="250" />
+				<div class="store_info">
+					<h2>Lou's Leather Shoes</h2>
+					<h3>Clothing</h3>
+					<p>Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper.</p>
+				</div>
+				<div class="clear_both"></div>
+			</div>
+			
+			
+			<!-- store -->
+			<div class="store_detail" id="ltselecrtronics_es">
+				<img class="store_photo" src="images/stores/ltselecrtronics_es.jpg" alt="LT's Electronics" width="500" height="250" />
+				<div class="store_info">
+					<h2>LT's Electronics</h2>
+					<h3>Electronics</h3>
+					<p>Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper pharetra posuere.</p>
+				</div>
+				<div class="clear_both"></div>
+			</div>
+			
+			
+			<!-- store -->
+			<div class="store_detail" id="nails4occasions_ss">
+				<img class="store_photo" src="images/stores/nails4occasions_ss.jpg" alt="Nails 4 Occasions" width="500" height="250" />
+				<div class="store_info">
+					<h2>Nails 4 Occasions</h2>
+					<h3>Services</h3>
+					<p>Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper.</p>
+				</div>
+				<div class="clear_both"></div>
+			</div>
+			
+			
+			<!-- store -->
+			<div class="store_detail" id="nativesun_cs">
+				<img class="store_photo" src="images/stores/nativesun_cs.jpg" alt="Native Sun" width="500" height="250" />
+				<div class="store_info">
+					<h2>Native Sun</h2>
+					<h3>Clothing</h3>
+					<p>Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper.</p>
+				</div>
+				<div class="clear_both"></div>
+			</div>
+			
+			
+			<!-- store -->
+			<div class="store_detail" id="ottosouterwear_cs">
+				<img class="store_photo" src="images/stores/ottosouterwear_cs.jpg" alt="Otto's Outerwear" width="500" height="250" />
+				<div class="store_info">
+					<h2>Otto's Outerwear</h2>
+					<h3>Clothing</h3>
+					<p>Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper.</p>
+				</div>
+				<div class="clear_both"></div>
+			</div>
+			
+			
+			<!-- store -->
+			<div class="store_detail" id="salliessalads_fs">
+				<img class="store_photo" src="images/stores/salliessalads_fs.jpg" alt="Sallie's Salads" width="500" height="250" />
+				<div class="store_info">
+					<h2>Sallie's Salads</h2>
+					<h3>Food</h3>
+					<p>Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper.</p>
+				</div>
+				<div class="clear_both"></div>
+			</div>
+			
+			
+			<!-- store -->
+			<div class="store_detail" id="takeurlicks_fs">
+				<img class="store_photo" src="images/stores/takeurlicks_fs.jpg" alt="Take Ur Licks" width="500" height="250" />
+				<div class="store_info">
+					<h2>Take Ur Licks</h2>
+					<h3>Food</h3>
+					<p>Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper.</p>
+				</div>
+				<div class="clear_both"></div>
+			</div>
+			
+			
+			<!-- store -->
+			<div class="store_detail" id="ttstoyshop_es">
+				<img class="store_photo" src="images/stores/ttstoyshop_es.jpg" alt="TT's Toy Shop" width="500" height="250" />
+				<div class="store_info">
+					<h2>TT's Toy Shop</h2>
+					<h3>Electronics</h3>
+					<p>Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper.</p>
+				</div>
+				<div class="clear_both"></div>
+			</div>
+		</div>
+		
+	</div></body>
+</html>
