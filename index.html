@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]--> <html class="no-js ie6" lang="en"> <!--[endif]-->
-<!--[if IE 7 ]-->    <html class="no-js ie7" lang="en"> <!--[endif]-->
-<!--[if IE 8 ]-->    <html class="no-js ie8" lang="en"> <!--[endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lt IE 7 ]--> <html class="no-js" lang="en"> <!--[endif]-->
+<!--[if IE 7 ]-->     <!--[endif]-->
+<!--[if IE 8 ]-->     <!--[endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <!--<![endif]-->
 <head>
 	<meta charset="UTF-8">
 	<title>MainStreet Mall</title>
@@ -102,7 +102,10 @@
       photofour.alphaClock = new clock(2.00, 6.00, 1, false, 1, linear, 1.0, 1.00, 0.0000);
       photofive.alphaClock = new clock(2.00, 8.00, 1, false, 1, linear, 1.0, 1.00, 0.0000);
       photosix.alphaClock = new clock(2.00, 10.00, 1, false, 1, linear, 1.0, 1.00, 0.0000);
-
+	  
+      // Play "intro_talk" audio when animation starts
+      photosix.alphaClock.started.subscribe(play_sound);
+	  
       // Start animation clocks
       photoone.alphaClock.start();
       phototwo.alphaClock.start();
@@ -113,15 +116,14 @@
       animations[0].pathClock.start();
       animations[1].pathClock.start();
      
-	  // Play "intro_talk" audio when animation starts
-      animations[1].pathClock.started.subscribe(playSound);
+	 
 	  
       // Set animation timer
       setInterval(drawFrame, (1000 / fps));
     }
 	
-      // Play turkey "Gobble" when triggered
-    function playSound() {
+      // Play narrator "intro_talk" when triggered
+    function play_sound() {
 
         var intro_talk = document.getElementById("intro");
             intro_talk.play();
@@ -309,8 +311,8 @@
     
     <!-- "intro_talk" Audio File Preload -->
     <audio id="intro" preload>
-        <source src="images/media/intro_talk.mp3"/>
-        <source src="images/media/intro_talk.wav"/>
+        <source src="media/intro_talk.mp3"/>
+        <source src="media/intro_talk.wav"/>
     </audio>			
 </body>
 </html>
