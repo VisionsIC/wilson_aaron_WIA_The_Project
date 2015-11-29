@@ -1,20 +1,15 @@
 @charset "UTF-8";
-
 /* CSS Document                        */
 /* Coded by Aaron Wilson               */
 /* WIA Course - Full Sail University   */
-
 .grey {
 	position: absolute;
 	top: 800px;
 	color: #aaa;
 }
-
 /*  store Info   */
 .store_detail_content { display: none; }
 .store_detail_content .store_detail { width: 920px; }
-
-
 /*  Interactive storemap content */
 .storemap_content {
 	background-image: url(../images/template/storemap.png);
@@ -30,9 +25,15 @@
 	font-size: 12px;
 	margin: 0px 0px 0px 0px;
 }
-
+.storemap_content #stars_mob {
+	display: none;
+	visibility: hidden;
+}
+.storemap_content #stars_tab {
+	display: none;
+	visibility: hidden;
+}
 .storemap_content .clear_both { clear: both; line-height: 1px; }
-
 .storemap_content .store_info h2 {
 	margin: 0px 0px 0px 0px;
 	font-size: 18px;
@@ -46,7 +47,6 @@
 	color: #2c3748;
 }
 .storemap_content p { margin: 0px 0px 0px 0px; }
-
 .storemap_content a, a:visited { color: #AA0000; margin: 0px 0px 0px 0px; }
 .storemap_content a.star {
 	background-image: url(../images/template/stars.png);
@@ -85,7 +85,6 @@
 	height: 248px;
 	border: 2px solid black;
 }
-
 .storemap_content .store_detail .store_photo {
 	position: absolute;
 	top: 0px;
@@ -98,4 +97,70 @@
 }
 .storemap_content .store_detail .store_info h2 {
 	color: deepskyblue;
+}
+@media screen and (max-width:320px){
+	
+	
+}
+@media screen and (max-width:768px){
+.store_detail_content .store_detail { width: 768px; }
+/*  Interactive storemap content */
+.storemap_content {
+	background-image: url(../images/template/store_map_tab.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	height: 400px;
+	width: 1000px;
+	position: relative;
+	top: -20px;
+	left: 0px;
+	color: #000;
+	font-family: Arial;
+	font-size: 12px;
+	margin: 0px 0px 0px 0px;
+}
+.storemap_content #stars_mob {
+	display: none;
+	visibility: hidden;
+}
+.storemap_content #stars_tab {
+	display: block;
+	visibility: visible;
+}
+.storemap_content #stars_desk {
+	display: none;
+	visibility: hidden;
+}
+.storemap_content .goods_form {
+	position: absolute;
+	top: 155px;
+	left: 428px;
+}
+.storemap_content .detail_content {
+	position: absolute;
+	top: 320px;
+	left: 0px;
+	width: 768px;
+	height: 320px;
+}
+.storemap_content .store_detail {
+	position: absolute;
+	padding-top: 1px;
+	top: 4px;
+	left: 0px;
+	width: 362px;
+	height: 248px;
+	border: 2px solid black;
+}
+.storemap_content .store_detail .store_photo {
+	position: absolute;
+	top: 0px;
+	left: 390px;
+	width: 366px;
+	height: 250px;
+}
+.storemap_content .store_detail .store_info {
+	width: 340px;
+	padding: 10px 10px 10px 10px;
+}
 }

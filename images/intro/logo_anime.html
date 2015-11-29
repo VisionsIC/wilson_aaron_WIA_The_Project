@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<!-- Created with Ai->Canvas Export Plug-In Version 1.3 (Mac)   -->
+<!-- By Mike Swanson (http://blog.mikeswanson.com/)             -->
+
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <title>logo_anime</title>
+  <script src="Ai2CanvasAnimation.js"></script>
+  <script>
+
+    // Main canvas and context references
+    var canvas;
+    var ctx;
+
+    // Frames per second
+    var fps = 60.0;
+
+    // Animations
+    var animations = [ new maskpath() ];
+
+    function maskpath() {
+
+      // Control and anchor points
+      this.points = [
+                    [ [-221.0, 59.0], [2.7, 59.0], [226.5, 59.0], [457.0, 59.0] ]
+                    ];
+
+      // Linear motion index
+      this.linear = [
+                    [0, 0.00, 0.00], [0, 0.08, 0.08], [0, 0.16, 0.15], [0, 0.23, 0.23], 
+                    [0, 0.31, 0.31], [0, 0.39, 0.38], [0, 0.47, 0.46], [0, 0.54, 0.54], 
+                    [0, 0.62, 0.62], [0, 0.70, 0.69], [0, 0.77, 0.77], [0, 0.85, 0.85], 
+                    [0, 0.92, 0.92], [0, 1.00, 1.00]
+                    ];
+
+      // Segment T boundaries
+      this.segmentT = [1.00];
+
+      this.lastValue = -1.0;
+      this.x = 0;
+      this.y = 0;
+      this.orientation = 0.0;
+      this.pathClock = new clock(5.00, 0.00, 1, false, 0, linear, this.linear.length - 1, 1.00, 0.0000);
+
+      // Update function
+      this.update = updatePath;
+    }
+
+    function init() {
+
+      // Set main canvas and context references
+      canvas = document.getElementById("canvas");
+      ctx = canvas.getContext("2d");
+
+      // Start animation clocks
+      animations[0].pathClock.start();
+
+      // Set animation timer
+      setInterval(drawFrame, (1000 / fps));
+    }
+
+    function updateAnimations() {
+
+      // Update animation paths  
+      var animationCount = animations.length;
+      for (var i = 0; i < animationCount; i++) {
+        animations[i].update();
+      }
+    }
+
+    function drawFrame() {
+
+      // Update animations
+      updateAnimations();
+
+      // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      image(ctx);
+
+      ctx.save();
+      ctx.translate(animations[0].x, animations[0].y);
+      mask(ctx);
+      ctx.restore();
+    }
+
+    function image(ctx) {
+
+      // image/Image
+      ctx.save();
+      ctx.save();
+      ctx.shadowColor = "rgba(0, 0, 0, 0.40)";
+      ctx.shadowOffsetX = 1.0;
+      ctx.shadowOffsetY = 3.0;
+      ctx.shadowBlur = 4.0;
+      ctx.drawImage(document.getElementById("image1"), 0.0, 0.0);
+      ctx.restore();
+      ctx.restore();
+    }
+
+    function mask(ctx) {
+
+      var alpha = ctx.globalAlpha;
+      ctx.globalAlpha = alpha * 0.50;
+
+      // mask/Slice
+      ctx.save();
+      ctx.globalAlpha = alpha * 1.00;
+      ctx.beginPath();
+      ctx.moveTo(-70.5, 93.5);
+      ctx.lineTo(-70.5, -93.5);
+      ctx.lineTo(67.5, -93.5);
+      ctx.lineTo(67.5, 93.5);
+      ctx.lineTo(-70.5, 93.5);
+      ctx.closePath();
+
+      // mask/Slice
+      ctx.beginPath();
+      ctx.moveTo(-70.5, 93.5);
+      ctx.lineTo(-70.5, -93.5);
+      ctx.lineTo(67.5, -93.5);
+      ctx.lineTo(67.5, 93.5);
+      ctx.lineTo(-70.5, 93.5);
+      ctx.closePath();
+
+      // mask/Linked File
+      ctx.save();
+      ctx.transform(1.000, 0.000, -0.000, 1.000, 1.5, 0.0);
+      ctx.drawImage(document.getElementById("image2"), -69.0, -93.5);
+      ctx.restore();
+      ctx.restore();
+    }
+  </script>
+ </head>
+ <body onload="init()">
+   <canvas id="canvas" width="242" height="109"></canvas>
+   <img alt="Image" id="image1" style="display: none" src="image17.png" />
+   <img alt="Linked File" id="image2" style="display: none" src="file:///Users/aaronrobertwilson/Desktop/Exercise%20Files/Ex_Files_JQ_maps/Exercise%20Files/wilson_aaron_WIA_The_Project/images/intro/glare_fx.png" />
+ </body>
+</html>

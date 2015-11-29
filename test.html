@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Print Test Array</title>
+</head>
+<body>
+  <script>
+function power_of(base, its_exponent) {
+  if (its_exponent == undefined)
+    its_exponent = 2;
+  var result = 1;
+  for (var count = 0; count < its_exponent; count++)
+    result *= base;
+  return result;
+}
+
+console.log(power_of(4));
+// → 16
+console.log(power_of(4, 3));
+// → 64
+  </script>
+</body>
+</html>

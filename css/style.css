@@ -24,16 +24,55 @@ a:hover { color: white; }
 *:first-child+html .group { zoom: 1; } /* IE7 */
 
 /* Header CSS */
+header {
+	position: relative;
+	left: 478px;
+	width: 1000px;
+	height: px;
+	}
 #logo_wrap {
 	position: absolute;
 	top: 30px;
-	left: 478px;
+	left: 0px;
 	background-image: url(../images/template/mm_logo-01.png);
 	height: 102px;
 	width: 235px;
-	
 	}
-
+#head_info_wrap {
+	position: absolute;
+	top: 30px;
+	right: 0px;
+	height: 80px;
+	width: 750px;
+	padding-top: 20px;
+	text-align: left;
+	color: #000000;
+	}
+	
+ #address, #weekdays, #weekends {
+	position: absolute;
+	left: 100px;
+	}
+	
+ #address strong {
+	 color: #0E97D1;
+	 }
+ #weekdays strong {
+	 color: #0E97D1;
+	 }	
+ #address {
+	position: absolute;
+	top: 10px;
+	}	
+ #weekdays {
+	position: absolute;
+	top: 40px;
+	}
+ #weekends {
+	position: absolute;
+	top: 70px;
+	}
+	
 /* JQuery Navigation Menu */
 #nav_menu { 
 	margin: 0 auto; 

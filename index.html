@@ -5,67 +5,54 @@
 <!--[if (gte IE 9)|!(IE)]><!--> <!--<![endif]-->
 <head>
 	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, maximum scale=1.0, minimum scale=1.0, initial-scale=1.0">
 	<title>MainStreet Mall</title>
-	
 	<link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="includes/display_styles.css" />
     <script src="js/modernizr.js"></script>
     <script src="js/Ai2CanvasAnimation.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script src="js/jquery.color-RGBa-patch.js"></script>
     <script src="js/menu.js"></script>
-
 	<!--[if lt IE 9]-->
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<!--[endif]-->
-		
     <!--[START] Canvas Inline Script -->
     <script>
-
     // Main canvas and context references
     var canvas;
     var ctx;
-
     // Frames per second
     var fps = 60.0;
-
     // Animations
     var animations = [ new mainstreetpath(), new wfpath() ];
-
     function mainstreetpath() {
-
       // Control and anchor points
       this.points = [
                     [ [468.0, 579.0], [468.0, 161.0], [471.0, 161.0], [471.0, 161.0] ]
                     ];
-
       // Linear motion index
       this.linear = [
                     [0, 0.00, 0.00], [0, 0.04, 0.12], [0, 0.09, 0.25], [0, 0.15, 0.38], 
                     [0, 0.21, 0.50], [0, 0.28, 0.62], [0, 0.37, 0.75], [0, 0.50, 0.88], 
                     [0, 1.00, 1.00]
                     ];
-
       // Segment T boundaries
       this.segmentT = [1.00];
-
       this.lastValue = -1.0;
       this.x = 0;
       this.y = 0;
       this.orientation = 0.0;
       this.pathClock = new clock(2.00, 0.00, 1, false, 1, linear, this.linear.length - 1, 1.00, 0.0000);
-
       // Update function
       this.update = updatePath;
     }
-
     function wfpath() {
-
       // Control and anchor points
       this.points = [
                     [ [1495.0, 223.0], [468.0, 223.0], [468.0, 223.0], [468.0, 223.0] ]
                     ];
-
       // Linear motion index
       this.linear = [
                     [0, 0.00, 0.00], [0, 0.02, 0.05], [0, 0.03, 0.10], [0, 0.05, 0.15], 
@@ -75,26 +62,20 @@
                     [0, 0.42, 0.80], [0, 0.47, 0.85], [0, 0.54, 0.90], [0, 0.63, 0.95], 
                     [0, 1.00, 1.00]
                     ];
-
       // Segment T boundaries
       this.segmentT = [1.00];
-
       this.lastValue = -1.0;
       this.x = 0;
       this.y = 0;
       this.orientation = 0.0;
       this.pathClock = new clock(18.00, 0.00, 1, false, 1, linear, this.linear.length - 1, 1.00, 0.0000);
-
       // Update function
       this.update = updatePath;
     }
-
     function init() {
-
       // Set main canvas and context references
       canvas = document.getElementById("canvas");
       ctx = canvas.getContext("2d");
-
       // Initialize animations
       photoone.alphaClock = new clock(2.00, 0.00, 1, false, 1, linear, 1.0, 1.00, 0.0000);
       phototwo.alphaClock = new clock(2.00, 2.00, 1, false, 1, linear, 1.0, 1.00, 0.0000);
@@ -102,10 +83,8 @@
       photofour.alphaClock = new clock(2.00, 6.00, 1, false, 1, linear, 1.0, 1.00, 0.0000);
       photofive.alphaClock = new clock(2.00, 8.00, 1, false, 1, linear, 1.0, 1.00, 0.0000);
       photosix.alphaClock = new clock(2.00, 10.00, 1, false, 1, linear, 1.0, 1.00, 0.0000);
-	  
       // Play "intro_talk" audio when animation starts
       photosix.alphaClock.started.subscribe(play_sound);
-	  
       // Start animation clocks
       photoone.alphaClock.start();
       phototwo.alphaClock.start();
@@ -115,83 +94,62 @@
       photosix.alphaClock.start();
       animations[0].pathClock.start();
       animations[1].pathClock.start();
-     
-	 
-	  
       // Set animation timer
       setInterval(drawFrame, (1000 / fps));
     }
-	
       // Play narrator "intro_talk" when triggered
     function play_sound() {
-
         var intro_talk = document.getElementById("intro");
             intro_talk.play();
     }
-
     function updateAnimations() {
-
       // Update animation clocks
       updateAllClocks();
-
       // Update animation paths  
       var animationCount = animations.length;
       for (var i = 0; i < animationCount; i++) {
         animations[i].update();
       }
     }
-
     function drawFrame() {
-
       // Update animations
       updateAnimations();
-
       // Clear canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
       ctx.save();
       ctx.globalAlpha = photoone.alphaClock.value;
       photoone(ctx);
       ctx.restore();
-
       ctx.save();
       ctx.globalAlpha = phototwo.alphaClock.value;
       phototwo(ctx);
       ctx.restore();
-
       ctx.save();
       ctx.globalAlpha = photothree.alphaClock.value;
       photothree(ctx);
       ctx.restore();
-
       ctx.save();
       ctx.globalAlpha = photofour.alphaClock.value;
       photofour(ctx);
       ctx.restore();
-
       ctx.save();
       ctx.globalAlpha = photofive.alphaClock.value;
       photofive(ctx);
       ctx.restore();
-
       ctx.save();
       ctx.globalAlpha = photosix.alphaClock.value;
       photosix(ctx);
       ctx.restore();
-
       ctx.save();
       ctx.translate(animations[0].x, animations[0].y);
       mainstreet(ctx);
       ctx.restore();
-
       ctx.save();
       ctx.translate(animations[1].x, animations[1].y);
       whereFine(ctx);
       ctx.restore();
     }
-
     function photoone(ctx) {
-
       // photoone/Linked File
       ctx.save();
       ctx.save();
@@ -200,9 +158,7 @@
       ctx.restore();
       ctx.restore();
     }
-
     function phototwo(ctx) {
-
       // phototwo/Linked File
       ctx.save();
       ctx.save();
@@ -211,9 +167,7 @@
       ctx.restore();
       ctx.restore();
     }
-
     function photothree(ctx) {
-
       // photothree/Linked File
       ctx.save();
       ctx.save();
@@ -222,9 +176,7 @@
       ctx.restore();
       ctx.restore();
     }
-
     function photofour(ctx) {
-
       // photofour/Linked File
       ctx.save();
       ctx.save();
@@ -233,9 +185,7 @@
       ctx.restore();
       ctx.restore();
     }
-
     function photofive(ctx) {
-
       // photofive/Linked File
       ctx.save();
       ctx.save();
@@ -244,9 +194,7 @@
       ctx.restore();
       ctx.restore();
     }
-
     function photosix(ctx) {
-
       // photosix/Linked File
       ctx.save();
       ctx.save();
@@ -255,17 +203,13 @@
       ctx.restore();
       ctx.restore();
     }
-
     function mainstreet(ctx) {
-
       // mainstreet/Image
       ctx.save();
       ctx.drawImage(document.getElementById("image7"), -115.4, -48.4);
       ctx.restore();
     }
-
     function whereFine(ctx) {
-
       // whereFine/A Fine American Shopping Experience
       ctx.save();
       ctx.font = "24.0px 'Myriad Pro'";
@@ -275,18 +219,17 @@
     }
   </script>
 </head>
-
 <body onload="init()">
-    
-    <header>
+<header>
         <h1>MainStreet Mall</h1>
-        <div id="logo_wrap">
-        
+        <div id="logo_wrap"></div>
+        <div id="head_info_wrap">
+        <span id="address"><h3><strong>Address:</strong>            123 Main Street Anytown, WA 12345 USA</h3></span>
+        <span id="weekdays"><h3><strong>Hours:</strong>             Monday - Friday | 9AM - 10PM</h3></span>
+        <span id="weekends"><h3>                                   Saturday - Sunday | 8AM - 12AM</h3></span>
         </div>
-    </header>
-
+</header>    
 	<div class="nav-wrap">
-
 		<ul class="group" id="nav_menu">
             <li class="nav_item selected"><a  href="index.html">Home</a></li>
             <li class="nav_item"><a href="map.html">Map</a></li>
@@ -294,13 +237,10 @@
             <li class="nav_item"><a href="#">Reviews</a></li>
             <li class="nav_item"><a href="#">Contact</a></li>
         </ul>
-        
     </div>
-    
     <div id="canvas_wrap">
         <canvas id="canvas" width="1000" height="400"></canvas>
     </div> 
-       
     <img alt="Linked File" id="image1" style="display: none" src="images/template/mall_one_intro.jpg"/>
     <img alt="Linked File" id="image2" style="display: none" src="images/template/mall_two_intro.jpg"/>
     <img alt="Linked File" id="image3" style="display: none" src="images/template/mall_three_intro.jpg"/>
@@ -308,7 +248,16 @@
     <img alt="Linked File" id="image5" style="display: none" src="images/template/mall_five_intro.jpg"/>
     <img alt="Linked File" id="image6" style="display: none" src="images/template/mall_six_intro.jpg"/>
     <img alt="Image" id="image7" style="display: none" src="images/template/image9.png"/>
-    
+    <div id="article_wrap">
+    	<article>
+        	<p></p>
+        </article>
+    </div>
+    <footer>
+    	<h2>
+        	<p>&copy; 2015 | FULL SAIL UNIVERSITY | WIA COURSE | AARON WILSON | PROJECT </p>
+        </h2>
+    </footer>
     <!-- "intro_talk" Audio File Preload -->
     <audio id="intro" preload>
         <source src="media/intro_talk.mp3"/>

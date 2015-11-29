@@ -1,17 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="no-js">
-<!--[if lt IE 7 ]--> <html class="no-js ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]-->    <html class="no-js ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]-->    <html class="no-js ie8" lang="en"> <![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="no-js ie8">
+<!--[if lt IE 7 ]-->  <![endif]-->
+<!--[if IE 7 ]-->     <![endif]-->
+<!--[if IE 8 ]-->     <![endif]-->
 <!--[if (gte IE 9)|!(IE)]--><!--><!--<![endif]-->
-
-
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Interactive Mall Map</title>
-        
+        <meta name="viewport" content="width=device-width, maximum scale=1.0, minimum scale=1.0, initial-scale=1.0">
+		<title>Interactive Mall Map</title>        
         <link rel="stylesheet" href="css/normalize.css" />
-		<link rel="stylesheet" href="includes/style.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="includes/display_styles.css" />
 		<link rel="stylesheet" type="text/css" href="includes/interactive_storemap.css" />
         <!--[if lt IE 9]--><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><!--[endif]-->
         <script src="js/modernizr.js"></script>
@@ -21,15 +20,16 @@
 		<script type="text/javascript" src="includes/interactive_storemap.js"></script>
 		<script src="includes/jquery.color-RGBa-patch.js"></script>
 	</head>
-
 	<body>
-
-	<header>
-		<h1>MainStreet Mall</h1>
-		<div id="logo_wrap">
-\		</div>
-	</header>
-
+<header>
+        <h1>MainStreet Mall</h1>
+        <div id="logo_wrap"></div>
+        <div id="head_info_wrap">
+        <span id="address"><h3><strong>Address:</strong>            123 Main Street Anytown, WA 12345 USA</h3></span>
+        <span id="weekdays"><h3><strong>Hours:</strong>             Monday - Friday | 9AM - 10PM</h3></span>
+        <span id="weekends"><h3>                                   Saturday - Sunday | 8AM - 12AM</h3></span>
+        </div>
+</header>    
 	<div class="nav-wrap">
 		<ul class="group" id="nav_menu">
 			<li class="nav_item"><a  href="index.html">Home</a></li>
@@ -40,26 +40,69 @@
 		</ul>
 	</div>
 	<div class="storemap_content">
-		<!-- stars -->
-		<a class="star" style="top:175px;  left:860px;" goods="BS" store="bookbinders_bs"></a>
-		<a class="star" style="top:41px;  left:358px;"  goods="CS" store="buttonup_cs"></a>
-		<a class="star" style="top:310px; left:222px;" goods="CS" store="coltscoatco_cs"></a>
-		<a class="star" style="top:175px;  left:95px;" goods="ES" store="computerwarehouse_es"></a>
-		<a class="star" style="top:41px; left:526px;" goods="FS" store="diningwithdina_fs"></a>
-		<a class="star" style="top:310px; left:358px;" goods="CS" store="divasshoes_cs"></a>
-		<a class="star" style="top:41px; left:292px;" goods="ES" store="harmonyalley_es"></a>
-		<a class="star" style="top:41px;  left:596px;" goods="CS" store="hoodiehut_cs"></a>
-		<a class="star" style="top:310px; left:526px;" goods="FS" store="juliesfruitjuices_fs"></a>
-		<a class="star" style="top:310px; left:596px;" goods="CS" store="lingeriebylaura_cs"></a>
-		<a class="star" style="top:310px;  left:662px;" goods="CS" store="lousleathershoes_cs"></a>
-		<a class="star" style="top:41px;  left:662px;" goods="ES" store="ltselecrtronics_es"></a>
-		<a class="star" style="top:41px; left:222px;" goods="SS" store="nails4occasions_ss"></a>
-		<a class="star" style="top:310px;  left:292px;" goods="CS" store="nativesun_cs"></a>
-		<a class="star" style="top:310px; left:732px;" goods="CS" store="ottosouterwear_cs"></a>
-		<a class="star" style="top:310px; left:428px;" goods="FS" store="salliessalads_fs"></a>
-		<a class="star" style="top:41px;  left:428px;" goods="FS" store="takeurlicks_fs"></a>
-		<a class="star" style="top:41px; left:732px;" goods="ES" store="ttstoyshop_es"></a>
-
+		<!-- stars desktop -->
+        <div id="stars_desk">
+            <a class="star" style="top:175px;  left:860px;" goods="BS" store="bookbinders_bs"></a>
+            <a class="star" style="top:41px;  left:358px;"  goods="CS" store="buttonup_cs"></a>
+            <a class="star" style="top:310px; left:222px;" goods="CS" store="coltscoatco_cs"></a>
+            <a class="star" style="top:175px;  left:95px;" goods="ES" store="computerwarehouse_es"></a>
+            <a class="star" style="top:41px; left:526px;" goods="FS" store="diningwithdina_fs"></a>
+            <a class="star" style="top:310px; left:358px;" goods="CS" store="divasshoes_cs"></a>
+            <a class="star" style="top:41px; left:292px;" goods="ES" store="harmonyalley_es"></a>
+            <a class="star" style="top:41px;  left:596px;" goods="CS" store="hoodiehut_cs"></a>
+            <a class="star" style="top:310px; left:526px;" goods="FS" store="juliesfruitjuices_fs"></a>
+            <a class="star" style="top:310px; left:596px;" goods="CS" store="lingeriebylaura_cs"></a>
+            <a class="star" style="top:310px;  left:662px;" goods="CS" store="lousleathershoes_cs"></a>
+            <a class="star" style="top:41px;  left:662px;" goods="ES" store="ltselecrtronics_es"></a>
+            <a class="star" style="top:41px; left:222px;" goods="SS" store="nails4occasions_ss"></a>
+            <a class="star" style="top:310px;  left:292px;" goods="CS" store="nativesun_cs"></a>
+            <a class="star" style="top:310px; left:732px;" goods="CS" store="ottosouterwear_cs"></a>
+            <a class="star" style="top:310px; left:428px;" goods="FS" store="salliessalads_fs"></a>
+            <a class="star" style="top:41px;  left:428px;" goods="FS" store="takeurlicks_fs"></a>
+            <a class="star" style="top:41px; left:732px;" goods="ES" store="ttstoyshop_es"></a>
+        </div>
+        <!--  stars tablet -->
+        <div id="stars_tab">
+            <a class="star" style="top:135px;  left:650px;" goods="BS" store="bookbinders_bs"></a>
+            <a class="star" style="top:21px;  left:320px;"  goods="CS" store="buttonup_cs"></a>
+            <a class="star" style="top:250px; left:163px;" goods="CS" store="coltscoatco_cs"></a>
+            <a class="star" style="top:135px;  left:60px;" goods="ES" store="computerwarehouse_es"></a>
+            <a class="star" style="top:21px; left:394px;" goods="FS" store="diningwithdina_fs"></a>
+            <a class="star" style="top:250px; left:320px;" goods="CS" store="divasshoes_cs"></a>
+            <a class="star" style="top:21px; left:215px;" goods="ES" store="harmonyalley_es"></a>
+            <a class="star" style="top:21px;  left:446px;" goods="CS" store="hoodiehut_cs"></a>
+            <a class="star" style="top:250px; left:394px;" goods="FS" store="juliesfruitjuices_fs"></a>
+            <a class="star" style="top:250px; left:446px;" goods="CS" store="lingeriebylaura_cs"></a>
+            <a class="star" style="top:250px;  left:498px;" goods="CS" store="lousleathershoes_cs"></a>
+            <a class="star" style="top:21px;  left:498px;" goods="ES" store="ltselecrtronics_es"></a>
+            <a class="star" style="top:21px; left:163px;" goods="SS" store="nails4occasions_ss"></a>
+            <a class="star" style="top:250px;  left:215px;" goods="CS" store="nativesun_cs"></a>
+            <a class="star" style="top:250px; left:549px;" goods="CS" store="ottosouterwear_cs"></a>
+            <a class="star" style="top:250px; left:268px;" goods="FS" store="salliessalads_fs"></a>
+            <a class="star" style="top:21px;  left:268px;" goods="FS" store="takeurlicks_fs"></a>
+            <a class="star" style="top:21px; left:549px;" goods="ES" store="ttstoyshop_es"></a>
+        </div>
+        <!--  stars mobile -->
+        <div id="stars_mob">
+            <a class="star" style="top:175px;  left:860px;" goods="BS" store="bookbinders_bs"></a>
+            <a class="star" style="top:41px;  left:358px;"  goods="CS" store="buttonup_cs"></a>
+            <a class="star" style="top:310px; left:222px;" goods="CS" store="coltscoatco_cs"></a>
+            <a class="star" style="top:175px;  left:95px;" goods="ES" store="computerwarehouse_es"></a>
+            <a class="star" style="top:41px; left:526px;" goods="FS" store="diningwithdina_fs"></a>
+            <a class="star" style="top:310px; left:358px;" goods="CS" store="divasshoes_cs"></a>
+            <a class="star" style="top:41px; left:292px;" goods="ES" store="harmonyalley_es"></a>
+            <a class="star" style="top:41px;  left:596px;" goods="CS" store="hoodiehut_cs"></a>
+            <a class="star" style="top:310px; left:526px;" goods="FS" store="juliesfruitjuices_fs"></a>
+            <a class="star" style="top:310px; left:596px;" goods="CS" store="lingeriebylaura_cs"></a>
+            <a class="star" style="top:310px;  left:662px;" goods="CS" store="lousleathershoes_cs"></a>
+            <a class="star" style="top:41px;  left:662px;" goods="ES" store="ltselecrtronics_es"></a>
+            <a class="star" style="top:41px; left:222px;" goods="SS" store="nails4occasions_ss"></a>
+            <a class="star" style="top:310px;  left:292px;" goods="CS" store="nativesun_cs"></a>
+            <a class="star" style="top:310px; left:732px;" goods="CS" store="ottosouterwear_cs"></a>
+            <a class="star" style="top:310px; left:428px;" goods="FS" store="salliessalads_fs"></a>
+            <a class="star" style="top:41px;  left:428px;" goods="FS" store="takeurlicks_fs"></a>
+            <a class="star" style="top:41px; left:732px;" goods="ES" store="ttstoyshop_es"></a>
+        </div>
 		<!-- Form -->
 		<form id="storemap_form" name="storemap_form" class="goods_form" method="post" action="">
 			<select name="goods" id="goods">
@@ -71,7 +114,6 @@
 				<option value="ALL" selected="selected">Show all goods</option>
 			</select>
 		</form>
-
 		<!-- store details -->
 		<div class="detail_content">
 			<!-- store -->
@@ -84,14 +126,10 @@
 				<p>Curabitur fringilla. Nunc est ipsum, pretium quis, dapibus sed, varius non, lectus. Proin a quam.</p>
 			</div>
 		</div>
-			
 		</div>
 		<p class="grey">Vivamus auctor leo vel dui. Aliquam erat volutpat. Phasellus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras tempor. Morbi egestas, urna non consequat tempus, nunc arcu mollis enim, eu aliquam erat nulla non nibh. Duis consectetuer malesuada velit. Nam ante nulla, interdum vel, tristique ac, condimentum non, tellus. Proin ornare feugiat nisl. Suspendisse dolor nisl, ultrices at, eleifend vel, consequat at, dolor.</p>
 		<p class="grey">Suspendisse vestibulum dignissim quam. Integer vel augue. Phasellus nulla purus, interdum ac, venenatis non, varius rutrum, leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis a eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Fusce magna mi, porttitor quis, convallis eget, sodales ac, urna. Phasellus luctus venenatis magna. Vivamus eget lacus. Nunc tincidunt convallis tortor. Duis eros mi, dictum vel, fringilla sit amet, fermentum id, sem. Phasellus nunc enim, faucibus ut, laoreet in, consequat id, metus. Vivamus dignissim. Cras lobortis tempor velit. Phasellus nec diam ac nisl lacinia tristique. Nullam nec metus id mi dictum dignissim. Nullam quis wisi non sem lobortis condimentum. Phasellus pulvinar, nulla non aliquam eleifend, tortor wisi scelerisque felis, in sollicitudin arcu ante lacinia leo.</p>
 		<p class="grey">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras tempor. Vivamus auctor leo vel dui. Aliquam erat volutpat. Phasellus nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis a eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.</p>
-		
-		
-		
 		<div class="store_detail_content">
 			<!-- store -->
 			<div class="store_detail" id="bookbinders_bs">
@@ -102,7 +140,6 @@
 					<p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos commodo in interdum vitae leo.</p>
 				</div>
 			</div>
-			
 			<!-- store -->
 			<div class="store_detail" id="buttonup_cs">
 				<img class="store_photo" src="images/stores/buttonup_cs.jpg" alt="Button Up" width="500" height="250" />
@@ -112,7 +149,6 @@
 					<p>Curabitur fringilla. Nunc est ipsum, pretium quis, dapibus sed, varius non, lectus. Proin a quam. Praesent lacinia, eros quis aliquam porttitor, urna lacus volutpat urna, ut fermentum neque mi egestas dolor.</p>
 				</div>
 			</div>
-			
 			<!-- store -->
 			<div class="store_detail" id="coltscoatco_cs">
 				<img class="store_photo" src="images/stores/coltscoatco_cs.jpg" alt="Colt's Coat Co." width="500" height="250" />
@@ -122,7 +158,6 @@
 					<p>Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum.</p>
 				</div>
 			</div>
-			
 			<!-- store -->
 			<div class="store_detail" id="computerwarehouse_es">
 				<img class="store_photo" src="images/stores/computerwarehouse_es.jpg" alt="Computer Warehouse" width="500" height="250" />
@@ -132,7 +167,6 @@
 					<p>Donec porttitor ligula eu dolor. Maecenas vitae nulla nam consectetuer. Lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum.</p>
 				</div>
 			</div>
-			
 			<!-- store -->
 			<div class="store_detail" id="diningwithdina_fs">
 				<img class="store_photo" src="images/stores/diningwithdina_fs.jpg" alt="Dining With Dina" width="500" height="250" />
@@ -143,7 +177,6 @@
 				</div>
 				<div class="clear_both"></div>
 			</div>
-			
 			<!-- store -->
 			<div class="store_detail" id="divasshoes_cs">
 				<img class="store_photo" src="images/stores/divasshoes_cs.jpg" alt="Diva's Shoes" width="500" height="250" />
@@ -154,8 +187,6 @@
 				</div>
 				<div class="clear_both"></div>
 			</div>
-			
-			
 			<!-- store -->
 			<div class="store_detail" id="harmonyalley_es">
 				<img class="store_photo" src="images/stores/harmonyalley_es.jpg" alt="Harmony Alley" width="500" height="250" />
@@ -166,8 +197,6 @@
 				</div>
 				<div class="clear_both"></div>
 			</div>
-			
-			
 			<!-- store -->
 			<div class="store_detail" id="hoodiehut_cs">
 				<img class="store_photo" src="images/stores/hoodiehut_cs.jpg" alt="Hoodie Hut" width="500" height="250" />
@@ -178,8 +207,6 @@
 				</div>
 				<div class="clear_both"></div>
 			</div>
-			
-			
 			<!-- store -->
 			<div class="store_detail" id="juliesfruitjuices_fs">
 				<img class="store_photo" src="images/stores/juliesfruitjuices_fs.jpg" alt="Julie's Fruit Juices" width="500" height="250" />
@@ -190,8 +217,6 @@
 				</div>
 				<div class="clear_both"></div>
 			</div>
-			
-			
 			<!-- store -->
 			<div class="store_detail" id="lingeriebylaura_cs">
 				<img class="store_photo" src="images/stores/lingeriebylaura_cs.jpg" alt="Lingerie By Laura" width="500" height="250" />
@@ -202,8 +227,6 @@
 				</div>
 				<div class="clear_both"></div>
 			</div>
-			
-			
 			<!-- store -->
 			<div class="store_detail" id="lousleathershoes_cs">
 				<img class="store_photo" src="images/stores/lousleathershoes_cs.jpg" alt="Lou's Leather Shoes" width="500" height="250" />
@@ -214,8 +237,6 @@
 				</div>
 				<div class="clear_both"></div>
 			</div>
-			
-			
 			<!-- store -->
 			<div class="store_detail" id="ltselecrtronics_es">
 				<img class="store_photo" src="images/stores/ltselecrtronics_es.jpg" alt="LT's Electronics" width="500" height="250" />
@@ -226,8 +247,6 @@
 				</div>
 				<div class="clear_both"></div>
 			</div>
-			
-			
 			<!-- store -->
 			<div class="store_detail" id="nails4occasions_ss">
 				<img class="store_photo" src="images/stores/nails4occasions_ss.jpg" alt="Nails 4 Occasions" width="500" height="250" />
@@ -238,8 +257,6 @@
 				</div>
 				<div class="clear_both"></div>
 			</div>
-			
-			
 			<!-- store -->
 			<div class="store_detail" id="nativesun_cs">
 				<img class="store_photo" src="images/stores/nativesun_cs.jpg" alt="Native Sun" width="500" height="250" />
@@ -250,8 +267,6 @@
 				</div>
 				<div class="clear_both"></div>
 			</div>
-			
-			
 			<!-- store -->
 			<div class="store_detail" id="ottosouterwear_cs">
 				<img class="store_photo" src="images/stores/ottosouterwear_cs.jpg" alt="Otto's Outerwear" width="500" height="250" />
@@ -262,8 +277,6 @@
 				</div>
 				<div class="clear_both"></div>
 			</div>
-			
-			
 			<!-- store -->
 			<div class="store_detail" id="salliessalads_fs">
 				<img class="store_photo" src="images/stores/salliessalads_fs.jpg" alt="Sallie's Salads" width="500" height="250" />
@@ -274,8 +287,6 @@
 				</div>
 				<div class="clear_both"></div>
 			</div>
-			
-			
 			<!-- store -->
 			<div class="store_detail" id="takeurlicks_fs">
 				<img class="store_photo" src="images/stores/takeurlicks_fs.jpg" alt="Take Ur Licks" width="500" height="250" />
@@ -286,8 +297,6 @@
 				</div>
 				<div class="clear_both"></div>
 			</div>
-			
-			
 			<!-- store -->
 			<div class="store_detail" id="ttstoyshop_es">
 				<img class="store_photo" src="images/stores/ttstoyshop_es.jpg" alt="TT's Toy Shop" width="500" height="250" />
@@ -297,8 +306,16 @@
 					<p>Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper.</p>
 				</div>
 				<div class="clear_both"></div>
-			</div>
-		</div>
-		
-	</div></body>
+			    </div>
+		    </div>
+	    </div>
+        <article>
+        	<p></p>
+        </article>
+        <footer>
+            <h2>
+                <p>&copy; 2015 | FULL SAIL UNIVERSITY | WIA COURSE | AARON WILSON | PROJECT </p>
+            </h2>
+        </footer>
+    </body>
 </html>

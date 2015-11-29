@@ -3,13 +3,14 @@
 <!--[if IE 7 ]-->     <!--[endif]-->
 <!--[if IE 8 ]-->     <!--[endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <!--<![endif]-->
-
 <head>
 	<meta charset="UTF-8">
-	
+	<meta name="viewport" content="width=device-width, maximum scale=1.0, minimum scale=1.0, initial-scale=1.0">
 	<title>MainStreet Mall</title>
-	
+    <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="includes/display_styles.css" />
+    <script src="js/modernizr.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script src="js/jquery.color-RGBa-patch.js"></script>
     <script src="js/menu.js"></script>
@@ -50,23 +51,21 @@
                             }
                         ]
                     });
-
             chart.render();
         }
     </script>
     </head>
-    
 <body>
-
-    <header>
+<header>
         <h1>MainStreet Mall</h1>
-        <div id="logo_wrap">
-        
+        <div id="logo_wrap"></div>
+        <div id="head_info_wrap">
+        <span id="address"><h3><strong>Address:</strong>            123 Main Street Anytown, WA 12345 USA</h3></span>
+        <span id="weekdays"><h3><strong>Hours:</strong>             Monday - Friday | 9AM - 10PM</h3></span>
+        <span id="weekends"><h3>                                   Saturday - Sunday | 8AM - 12AM</h3></span>
         </div>
-    </header>
-
+</header>    
 	<div class="nav-wrap">
-
 		<ul class="group" id="nav_menu">
             <li class="nav_item "><a  href="index.html">Home</a></li>
             <li class="nav_item"><a href="map.html">Map</a></li>
@@ -74,10 +73,16 @@
             <li class="nav_item"><a href="#">Reviews</a></li>
             <li class="nav_item"><a href="#">Contact</a></li>
         </ul>
-        
     </div>
-
 <div id="chartContainer" style="height: 450px; width: 100%;">
 </div>
+    	<article>
+        	<p></p>
+        </article>
+    <footer>
+    	<h2>
+        	<p>&copy; 2015 | FULL SAIL UNIVERSITY | WIA COURSE | AARON WILSON | PROJECT </p>
+        </h2>
+    </footer>
 </body>
 </html>
